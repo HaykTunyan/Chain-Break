@@ -4,21 +4,22 @@ import Worning from '../../resources/howtowork/error_1.png';
 import QR from '../../resources/howtowork/qr_code.png';
 
 const WelcomeUser = () => {
+
     return (
         <div className="welcome-container">
             <WelcomeHeaader />
             {/* header banner */}
-            <div className="header-banner">
-                <h4 className="text-center">Welcome Jonathan</h4>
+            <div className="header-banner mt-3 container">
+                <h4 className="text-center banner-title">Welcome Jonathan</h4>
                 <div className="d-flex justify-content-center justify-content-md-end mt-5">
-                    <div className="baner-text px-5">
+                    <div className="baner-text px-0 px-lg-5">
                         <p className="m-0">Last positive test for antibodies: DATE A (click to update)</p>
                         <p>Last Contact Tracing Alert: DATE T (click to update)</p>
                     </div>
                 </div>
-                <div className="welcom-worning px-5">
+                <div className="welcom-worning px-0 px-lg-5">
                     <div className="worning-content">
-                        <h5 className="text-center">WARNING</h5>
+                        <h3 className="text-center worning-title">WARNING</h3>
                         <div className="worning-info">
                             <div className="">
                                 <img src={Worning} alt="ERROR_1" className="worning-img" />
@@ -40,8 +41,8 @@ const WelcomeUser = () => {
                 </div>
             </div>
             {/* welcome-main */}
-            <div className="welcome-main">
-                <div className="mt-5 text-center px-5">
+            <div className="welcome-main container">
+                <div className="mt-5 text-center ">
                     <h3 className="main-title">
                         Share your status with contacts to protect them all and break as many chains as possible
                     </h3>

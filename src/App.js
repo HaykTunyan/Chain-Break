@@ -1,6 +1,5 @@
-import { Switch, Route } from 'react-router-dom'
-
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Root from './components/Root';
 import NavBar from './components/NavBar';
 import Header from './components/Header/Header';
@@ -42,7 +41,7 @@ function App() {
               <ShareAppModal />
             </Route>
           </Route> */}
-          <Route path="/">
+          <Route path="/" exact>
             <Header />
             <Landing />
           </Route>

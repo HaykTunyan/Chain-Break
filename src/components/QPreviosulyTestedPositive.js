@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal'
 import actions from '../store/actions/index'
 import DatePicker from 'react-datepicker'
 import { USER_COVID_STATES } from '../store/constants'
+import { Link } from 'react-router-dom';
 
 class QPreviosulyTestedPositive extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class QPreviosulyTestedPositive extends React.Component {
   handleSubmit() {
     try {
       const date = new Date(this.state.date)
-      if(this.state.testedPosPreviously && 
+      if (this.state.testedPosPreviously &&
         (new Date().getDate() - date.getDate() < 7)) {
         this.props.dispatch(actions.storeSelectedState(USER_COVID_STATES.TESTED_POSITIVE))
         this.props.setPosTestDate(this.state.date)
@@ -31,21 +32,21 @@ class QPreviosulyTestedPositive extends React.Component {
         this.state.testedPosPreviously,
         date
       ))
-    } catch(e) {
+    } catch (e) {
       window.alert(e.message)
     }
   }
 
   renderTestedPosBefore() {
-    return(
+    return (
       <React.Fragment>
         <p>Please provide the date you tested positive.</p>
         <DatePicker
-          selected={this.state.date}  
-          onChange={(date)=>{
-            if(new Date().getDate() - date.getDate() < 7) 
+          selected={this.state.date}
+          onChange={(date) => {
+            if (new Date().getDate() - date.getDate() < 7)
               this.setState({ currentlyPositive: true })
-            this.setState({date: date})
+            this.setState({ date: date })
           }}
           isClearable
           placeholderText="Enter Date"
@@ -54,7 +55,7 @@ class QPreviosulyTestedPositive extends React.Component {
         />
         {this.state.currentlyPositive &&
           <p>You have tested positive in the last 7 days. Your status will be updated to red.</p>
-        } 
+        }
       </React.Fragment>
     )
   }
@@ -77,19 +78,20 @@ class QPreviosulyTestedPositive extends React.Component {
             <div class="custom-control custom-radio custom-control-inline">
               <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"
                 onChange={() => { this.setState({ optionSelected: true, testedPosPreviously: true }) }}
-                checked={this.state.optionSelected && this.state.testedPosPreviously} 
+                checked={this.state.optionSelected && this.state.testedPosPreviously}
               />
               <label class="custom-control-label" for="customRadioInline1">I have tested positive for COVID-19 before.</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
               <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input"
                 onChange={() => { this.setState({ optionSelected: true, testedPosPreviously: false }) }}
-                checked={this.state.optionSelected && !this.state.testedPosPreviously} 
+                checked={this.state.optionSelected && !this.state.testedPosPreviously}
               />
               <label class="custom-control-label" for="customRadioInline2">I have NOT tested positive for COVID-19 before.</label>
             </div>
             {this.state.testedPosPreviously && this.renderTestedPosBefore()}
           </div>
+
         </Modal.Body>
         <Modal.Footer>
           <button className="btn btn-primary" onClick={this.handleSubmit} disabled={!this.state.optionSelected}>

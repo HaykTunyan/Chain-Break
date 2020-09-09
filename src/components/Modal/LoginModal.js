@@ -59,6 +59,11 @@ class LoginModal extends React.Component {
         </div>
         {this.props.userAuthState === AUTH_STATES.FAILED && 'Failed - Email address registered, password incorrect.'}
         <Link to={'/password-reset/' + this.state.email}>Email password reset</Link>
+        <div className="form-group">
+          <Link to="/welcome">
+            <span>welcome</span>
+          </Link>
+        </div>
       </React.Fragment>
     )
   }

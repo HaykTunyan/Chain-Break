@@ -530,8 +530,21 @@
       color: #000000;
     }
   }
+  // Welcome Container Style.
   .welcome-container {
     background: linear-gradient(180deg, #FFF5F5 15.7%, #E1E2F7 158.35%);
+    background-image: url('../resources/howtowork/Vector.png');
+    .welcom-worning {
+      .worning-title {
+        font-family: Lato; 
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.1em;
+        color: #000000;
+      }
+    }
     .header-banner {
       .baner-text {
         font-family: Lato;
@@ -539,6 +552,15 @@
         font-weight: normal;
         font-size: 14px;
         line-height: 17px;
+        color: #000000;
+      }
+      .banner-title {
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.13em;
         color: #000000;
       }
       .worning-content {
@@ -569,6 +591,7 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         color: #000000;
+        padding: 0 80px;
       }
       .worning-info {
         display: flex;
