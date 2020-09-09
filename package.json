@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://localhost:5000",
+  "homepage": "http://freelancedeveloper.site/projects/react/covid/build/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
